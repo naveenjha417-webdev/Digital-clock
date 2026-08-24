@@ -1,0 +1,103 @@
+/* ================================
+   Digital Clock - Professional UI
+   ================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(circle at top left, #1e293b, transparent 40%),
+        radial-gradient(circle at bottom right, #312e81, transparent 40%),
+        #020617;
+
+    font-family: "Inter", "Segoe UI", sans-serif;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+/* Clock Container */
+#time {
+    position: relative;
+
+    padding: 35px 55px;
+
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 700;
+    letter-spacing: 4px;
+
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 24px;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.5),
+        inset 0 1px 1px rgba(255, 255, 255, 0.08);
+
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.5),
+        0 0 30px rgba(99, 102, 241, 0.4);
+
+    transition: all 0.3s ease;
+}
+
+/* Subtle hover effect */
+#time:hover {
+    transform: translateY(-5px) scale(1.01);
+
+    border-color: rgba(129, 140, 248, 0.5);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.6),
+        0 0 40px rgba(99, 102, 241, 0.15);
+}
+
+/* Decorative Glow */
+#time::before {
+    content: "";
+
+    position: absolute;
+    inset: -2px;
+
+    border-radius: 26px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(99, 102, 241, 0.5),
+        transparent 40%,
+        rgba(139, 92, 246, 0.5)
+    );
+
+    z-index: -1;
+    filter: blur(15px);
+    opacity: 0.4;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    #time {
+        width: 90%;
+        padding: 25px 15px;
+
+        font-size: clamp(2.2rem, 11vw, 4rem);
+
+        text-align: center;
+
+        border-radius: 18px;
+        letter-spacing: 2px;
+    }
+}
